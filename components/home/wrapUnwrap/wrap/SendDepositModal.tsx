@@ -2,7 +2,6 @@ import Image from "next/image";
 import { useEffect, useState, useContext } from "react";
 import useLucid from "../../../../hooks/useLucid";
 import { useTryCatch } from "../../../../hooks/useTryCatch";
-//import WrapUnwrapModal from "../WrapUnwrapModal";
 import styles from "../../../../styles/sendDeposit.module.scss";
 import { GlobalContext } from "../../../GlobalContext";
 import QRCode from "react-qr-code";

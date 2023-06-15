@@ -1,14 +1,3 @@
-//icons
-import { ArrowPathIcon } from "@heroicons/react/24/solid";
-import {
-  BsDiscord,
-  BsFacebook,
-  BsGithub,
-  BsTelegram,
-  BsTwitter,
-} from "react-icons/bs";
-import { MdFeedback } from "react-icons/md";
-import { SiReadthedocs } from "react-icons/si";
 import { NavigationType } from "../../types/leftbar";
 
 export const navigationLeftbar: NavigationType[] = [
@@ -53,14 +42,6 @@ export const navigationLeftbar: NavigationType[] = [
     current: false,
   },
 ];
-
-/* export const socialIconLeftbar = [
-  { icon: BsTwitter },
-  { icon: BsTelegram },
-  { icon: BsDiscord },
-  { icon: BsFacebook },
-  { icon: BsGithub },
-]; */
 
 export const socialLinks = [
   {
