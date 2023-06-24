@@ -9,7 +9,6 @@
     padding: 5px 10px;
     width: 180px;
     background-color: var.$background-color-light;
-    font-weight: var.$font-weight-semibold;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -22,6 +21,9 @@
       .icon{
         display: flex;
         gap: 10px;
+        p{
+          font-weight: var.$font-weight-medium;
+        }
       }
       &:last-child{
         #icon{
@@ -36,7 +38,7 @@
     z-index: 5;
     position: absolute;
     width: 180px;
-    background-color: #DBE4F6;
+    background-color: var.$background-color-light;
     top: 60px;
     display: flex;
     flex-direction: column;
@@ -52,14 +54,17 @@
       display: flex;
       gap: 10px;
       align-items: center;
+      p{
+        font-weight: var.$font-weight-medium;
+      }
       &.active{
         background-color: var.$primary-color-light;
       }
       &:hover{
-        background-color: var.$light-color-hover;
+        background-color: var.$primary-color-light;
       }
       &:last-child{
-        background-color: #DBE4F6;
+        background-color: var.$background-color-light;
         cursor: not-allowed;
       }
     }
@@ -76,16 +81,16 @@
       background-color: var.$background-color-dark;
     }
     .list{
-      background-color: #222222;
+      background-color: var.$background-color-dark;
       .item{
         &.active{
           background-color: var.$primary-color-dark;
         }
         &:hover{
-          background-color: var.$dark-color-hover;
+          background-color: var.$primary-color-dark;
         }
         &:last-child{
-          background-color: #222222;
+          background-color: var.$background-color-dark;
         }
 
       }

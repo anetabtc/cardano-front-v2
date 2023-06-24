@@ -7,9 +7,12 @@ import Modal from "../components/Modal";
 import Leftbar from "../components/partials/Leftbar";
 import Navbar from "../components/partials/Navbar";
 import "../styles/globals.scss";
+import useWindowSize from "../hooks/useResponsive";
 
 export default function App({ Component, pageProps }: AppProps) {
   const [showKya, setShowKya] = useState<boolean>(true);
+  const { width } = useWindowSize();
+  const isVisible = width > 1000;
 
   return (
     <div>
@@ -19,7 +22,7 @@ export default function App({ Component, pageProps }: AppProps) {
           <Navbar />
           {/* <KYA isOpen={showKya} setIsOpen={setShowKya} /> */}
           <Component {...pageProps} />
-          <Leftbar />
+          {isVisible && <Leftbar />}
         </Init>
       </GlobalContextProvider>
     </div>
