@@ -32,6 +32,23 @@
         }
       }
     }
+    @media (max-width: 700px){
+      width: 50px;
+      border-radius: 10px;
+      height: 35px;
+      .item{
+        .icon{
+          width: 16px;
+          height: auto;
+        }
+        .iconArrow{
+          svg{
+            width: 10px;
+            height: auto;
+          }
+        }
+      }
+    }
   }
 
   .list{
@@ -68,7 +85,21 @@
         cursor: not-allowed;
       }
     }
-
+    @media (max-width: 700px){
+      top: 50px;
+      width: 166px;
+      .item{
+        gap: 5px;
+        height: 24px;
+        svg{
+          width: 16px;
+          height: auto;
+        }
+        p{
+          font-size: 14px;
+        }
+      }
+    }
 
   }
 

@@ -5,6 +5,7 @@ import { useTryCatch } from "../../../../hooks/useTryCatch";
 import styles from "../../../../styles/sendDeposit.module.scss";
 import { GlobalContext } from "../../../GlobalContext";
 import QRCode from "react-qr-code";
+import { AppContext } from "../../../../pages/_app";
 
 
 interface Props {
@@ -35,7 +36,8 @@ export default function SendDepositModal({
     }
   }, [isOpen, tryWithErrorHandler, getUserPaymentCredential]);
 
-  const { darkMode } = useContext(GlobalContext);
+  const appContext = useContext(AppContext);
+  const { state } = appContext ?? { state: null };
 
   const [copyCredential, setCopyCredential] = useState(false);
   const [copyAddress, setCopyAddress] = useState(false);
@@ -101,7 +103,7 @@ export default function SendDepositModal({
                 <div className={styles.credential} onClick={HandleCopyCredential}>
                 {copyCredential && (<p className={styles.copied}>Copied</p>)}
                   <p>{credentialHash}</p>
-                  {darkMode ? (
+                  {state?.darkMode ? (
                   <Image src='/images/icons/copy-dark.png' width={14} height={14} alt='copy' className={styles.icon}/>
                   ): (
                   <Image src='/images/icons/copy-light.png' width={14} height={14} alt='copy' className={styles.icon}/>
@@ -128,7 +130,7 @@ export default function SendDepositModal({
               </div>
               <div className={styles.address} onClick={HandleCopyAddress}>
                   <p>{wrapDepositAddress}</p>
-                  {darkMode ? (
+                  {state?.darkMode ? (
                   <Image src='/images/icons/copy-dark.png' width={14} height={14} alt='copy' className={styles.icon}/>
                   ): (
                   <Image src='/images/icons/copy-light.png' width={14} height={14} alt='copy' className={styles.icon}/>

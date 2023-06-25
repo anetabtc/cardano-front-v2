@@ -40,6 +40,24 @@
           cursor: pointer;
       }
     }
+    @media (max-width: 700px){
+      gap: 6px;
+      .connectWallet{
+        width: 110px;
+        height: 35px;
+        p{
+          font-size: 12px;
+        }
+      }
+      .setting{
+        width: 35px;
+        height: 35px;
+        .gear{
+          width: 16px;
+          height: auto;
+        }
+      }
+    }
   }
 }
 
