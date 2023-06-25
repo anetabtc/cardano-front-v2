@@ -74,7 +74,7 @@
 
   .menu{
     width: 100%;
-    .title{
+    .titleSection{
       margin: 20px 0;
       text-align: center;
       color: #575757;
@@ -110,11 +110,11 @@
         }
       }
       .warning{
-        position: absolute;
         display: flex;
         align-items: center;
-        padding: 4px 0 10px 10px;
+        padding: 10px 0 10px 10px;
         gap: 10px;
+        width: 90%;
         :global(svg#icon){
           use{
             fill: #DD524C;
@@ -138,6 +138,7 @@
         font-size: 16px;
         font-weight: var.$font-weight-medium;
         color: var.$primary-color-input;
+        word-break: break-all;
       }
     }
   }
@@ -157,7 +158,7 @@
       align-items: center;
       gap: 10px;
       p{
-        font-size: 18px;;
+        font-size: 18px;
         font-weight: var.$font-weight-medium;
       }
     }
@@ -179,6 +180,117 @@
     &:disabled{
       background-color: var.$light-color-disable;
       cursor: not-allowed;
+    }
+  }
+  @media (max-width: 700px){
+    border-radius: 10px;
+    .options{
+      height: 40px;
+      border-radius: 5px;
+    }
+    .menu{
+      .titleSection{
+        margin: 10px 0;
+        font-size: 14px;
+      }
+      .inputAmount{
+        input{
+          height: 60px;
+          font-size: 24px;
+          border-radius: 5px;
+        }
+        .token{
+            top: 18px;
+        }
+        .tokenName{
+          svg{
+            width: 24px;
+            height: auto;
+          }
+          p{
+            font-size: 16px;
+          }
+        }
+      }
+      .inputAddress{
+        margin-top: 16px;
+        input{
+          border-radius: 5px;
+        }
+      }
+    }
+    .sectionFee{
+      flex-direction: column;
+      height: 80px;
+      justify-content: center;
+      gap: 5px;
+      align-items: flex-start;
+      .title{
+        margin: 0;
+        font-size: 16px;
+      }
+      .token{
+        gap: 6px;
+        align-self: flex-end;
+        p{
+          font-size: 16px;
+        }
+        svg{
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+    .wrapBtn{
+      margin-top: 5px;
+      height: 40px;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+  }
+  @media (max-width: 400px){
+    .options{
+      .item{
+        p{
+          font-size: 14px;
+          font-weight: var.$font-weight-medium;
+        }
+      }
+    }
+    .menu{
+      .inputAmount{
+        input{
+          font-size: 18px;
+          padding: 0 10px;
+        }
+        .token{
+          right: 10px;
+        }
+        .tokenName{
+          gap: 5px;
+        }
+        .warning{
+          p{
+            width: calc(100% - 30px);
+          }
+        }
+      }
+      .inputAddress{
+        input{
+          font-size: 14px;
+        }
+      }
+      .sectionFee{
+        padding: 0 10px;
+        .title{
+          font-size: 14px;
+        }
+        .token{
+          p{
+            font-size: 14px;
+          }
+        }
+      }
     }
   }
 }
