@@ -22,8 +22,6 @@ export default function App({ Component, pageProps }: AppProps) {
   const isLarge = width > 1000;
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  
-
   useEffect(() => {
     const body = document.body;
     const themeMode = localStorage.getItem("themeMode");
