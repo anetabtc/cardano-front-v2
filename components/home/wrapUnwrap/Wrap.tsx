@@ -118,7 +118,9 @@ const Wrap = () => {
       </section>
       {/* my receive amount  */}
       <section className={styles.sectionFee}>
-        <p className={styles.title}>You Will Receive</p>
+        <div className={styles.bridge}>
+          <p className={styles.title}>You Will Receive</p>
+        </div>
         <div className={styles.token}>
             <p>{formatAmount(btcToBeReceived)}</p>
             <p>cBTC</p>

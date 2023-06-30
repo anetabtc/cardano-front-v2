@@ -136,7 +136,9 @@ const Unwrap = () => {
 
       {/* fee */}
       <div className={styles.sectionFee}>
-        <p className={styles.title}>Cardano Transaction Fee</p>
+        <div className={styles.bridge}>
+          <p className={styles.title}>Cardano Transaction Fee</p>
+        </div>
         <div className={styles.token}>
           <p>{unwrapFeeCardano}</p>
           <p>ADA</p>
@@ -149,7 +151,9 @@ const Unwrap = () => {
       {/* my receive amount  */}
 
       <div className={styles.sectionFee}>
-        <p className={styles.title}>You Will Receive</p>
+      <div className={styles.bridge}>
+          <p className={styles.title}>You Will Receive</p>
+        </div>
         <div className={styles.token}>
           <p>{formatAmount(btcToBeReceived)}</p>
           <p>BTC</p>
