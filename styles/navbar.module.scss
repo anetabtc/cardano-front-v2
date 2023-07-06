@@ -17,7 +17,7 @@
     .connectWallet{
       @include var.btn-header();
       padding: 5px;
-      width: 200px;
+      width: 160px;
       background-color: var.$background-color-light;
       p{
         background-color: var.$primary-color-light;
