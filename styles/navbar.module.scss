@@ -9,6 +9,17 @@
   .logo{
     display: flex;
     align-items: center;
+    gap: 15px;
+    .btn{
+      @include var.btn-header();
+      padding: 5px 10px;
+      width: 150px;
+      background-color: var.$background-color-light;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
   }
   .nav{
     display: flex;
@@ -63,6 +74,11 @@
 
 :global(body.dark){
   .main{
+    .logo{
+      .btn{
+        background-color: var.$background-color-dark;
+      }
+    }
     .nav{
       .connectWallet{
         background-color: var.$background-color-dark;

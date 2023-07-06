@@ -18,7 +18,8 @@ const Navbar = () => {
   const { state } = appContext ?? { state: null };
 
   const { width } = useWindowSize();
-  const isLarge = width > 700;
+  const isMobile = width > 700;
+  const isLarge = width > 1000;
 
   const { walletMeta, disconnectWallet } = useCardanoWallet();
 
@@ -47,7 +48,7 @@ const Navbar = () => {
     <header className={styles.main}>
       <Link href="/" className={styles.logo}>
         {
-          isLarge ? (        
+          isMobile ? (        
             state?.darkMode ? (
             <Image src="/images/logo/logo_dark.png" alt="logo aneta" width={146} height={30} priority></Image>
             ):(
@@ -57,8 +58,17 @@ const Navbar = () => {
             <Image src="/images/logo/angel.png" alt="logo aneta" width={30} height={30} priority></Image>
           )
         }
+        {
+          isLarge && (
+            <>
+              <button className={styles.btn}>cBTC Minted: ---</button>
+              <button className={styles.btn}>BTC in Vault: ---</button>
+            </>
+          )
+        }
 
       </Link>
+
       
       <section className={styles.nav}>
         <SelectNetwork />
