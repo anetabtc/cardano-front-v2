@@ -196,7 +196,7 @@ const Unwrap = () => {
       <UnwrapSuccessful
         isOpen={unwrapStage === UnwrapStage.Success}
         amount={amount}
-        amountToReceive={btcToBeReceived.toString()}
+        amountToReceive={btcToBeReceived}
         unwrapBtcDestination={unwrapBtcDestination}
         onClick={() => setUnwrapStage(UnwrapStage.NotStart)}
         onClose={() => setUnwrapStage(UnwrapStage.NotStart)}

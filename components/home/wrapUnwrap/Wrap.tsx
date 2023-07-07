@@ -168,7 +168,7 @@ const Wrap = () => {
       <DepositConfirmModal
         isOpen={wrapStage === WrapStage.Sent}
         amount={amount}
-        amountToReceive={btcToBeReceived.toString()}
+        amountToReceive={btcToBeReceived}
         onClick={() => setWrapStage(WrapStage.NotStarted)}
         onClose={() => setWrapStage(WrapStage.NotStarted)}
         resetAmount={()=>setAmount("")}

@@ -1,11 +1,12 @@
 import Image from "next/image";
 //import WrapUnwrapModal from "../WrapUnwrapModal";
 import styles from "../../../../styles/depositConfirm.module.scss"
+import { formatAmount } from "../../../../utils/fortmat";
 
 interface Props {
   isOpen: boolean;
   amount: string;
-  amountToReceive: string;
+  amountToReceive: number;
   onClick: () => void;
   onClose: () => void;
   resetAmount: () => void;
@@ -63,7 +64,7 @@ export default function DepositConfirmModal({
                       <h3>cBTC</h3>
                     </div>
                     <div className={styles.value}>
-                      <p>{amountToReceive}</p>
+                      <p>{formatAmount(amountToReceive)}</p>
                     </div>
                   </div>
                 </div>
