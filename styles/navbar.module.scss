@@ -10,16 +10,22 @@
     display: flex;
     align-items: center;
     gap: 15px;
-/*     .btn{
+    .btn{
       @include var.btn-header();
       padding: 5px 10px;
-      width: 150px;
+      width: 190px;
       background-color: var.$background-color-light;
       display: flex;
       align-items: center;
       justify-content: center;
+      gap: 5px;
+      font-weight: var.$font-weight-semibold;
       cursor: pointer;
-    } */
+      .value{
+        width: 60px;
+        font-weight: var.$font-weight-semibold;
+      }
+    }
   }
   .nav{
     display: flex;
@@ -74,11 +80,11 @@
 
 :global(body.dark){
   .main{
-/*     .logo{
+    .logo{
       .btn{
         background-color: var.$background-color-dark;
       }
-    } */
+    }
     .nav{
       .connectWallet{
         background-color: var.$background-color-dark;
