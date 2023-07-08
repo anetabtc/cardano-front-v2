@@ -12,7 +12,6 @@ import SelectNetwork from "./navbar/SelectNetwork";
 import Setting from "./navbar/Setting";
 import { AppContext } from "../../pages/_app";
 import { GlobalContext } from "../GlobalContext";
-import { BlockfrostAssets } from "../../types/blockfrost";
 import { numberToFixed } from "../../utils/fortmat";
 import useBitcoinVault from "../../hooks/useBitcoinVault";
 import useBlockfrostApi from "../../hooks/useBlockfrostApi";
