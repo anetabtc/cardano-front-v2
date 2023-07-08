@@ -8,7 +8,7 @@ import {
 } from "lucid-cardano";
 import { useContext } from "react";
 import { GlobalContext } from "../components/GlobalContext";
-//import { CONSTANTS } from "../utils/constants";
+import { CONSTANTS } from "../utils/constants";
 
 export default function useLucid() {
   const { lucid, walletApi, config } = useContext(GlobalContext);
@@ -26,8 +26,7 @@ export default function useLucid() {
 
     const cBTCMintingPolicy: Script = {
       type: "PlutusV2",
-      //script: CONSTANTS.CBTC_MINTING_POLICY[config.network],
-      script: config.cbtcAssetId,
+      script: CONSTANTS.CBTC_MINTING_POLICY[config.network],
     };
 
     const unit = toUnit(
