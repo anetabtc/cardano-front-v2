@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import styles from "../../styles/kyc.module.scss"
+import styles from "../../styles/kya.module.scss"
 
 
 const KYA = (/* { isOpen, setIsOpen }: Props */) => {
@@ -35,12 +35,6 @@ const KYA = (/* { isOpen, setIsOpen }: Props */) => {
                 <li className={styles.list}>Only YOU are responsible for your own assets;</li>
                 <li className={styles.list}>The anetaBTC protocol and its smart contracts meet your expectations.</li>
               </ol>
-              <h3 className={styles.subtitle}>Notice that:</h3>
-              <ul>
-                <li className={styles.list}>You will use app.anetabtc.io at your own risk.</li>
-                <li className={styles.list}>Only YOU are responsible for your own assets.</li>
-                <li className={styles.list}>The anetaBTC protocol and its smart contracts meet your expectations.</li>
-              </ul>
               <p className={`${styles.text} ${styles.bold}`}>The anetaBTC team {"doesn't"} guarantee the absence of bugs and errors.<br/>app.anetabtc.io is without a Know Your Customer (KYC) process and can offer NO assistance if a user is hacked or cheated out of passwords, currency or private wallet keys.</p>
             </section>
             <button className={styles.btn}

@@ -14,7 +14,7 @@ import { AppContext } from "../../pages/_app";
 import { GlobalContext } from "../GlobalContext";
 import { numberToFixed } from "../../utils/fortmat";
 import useBitcoinVault from "../../hooks/useBitcoinVault";
-import useBlockfrostApi from "../../hooks/useBlockfrostApi";
+import useAssetsApi from "../../hooks/useAssetsApi";
 
 const Navbar = () => {
   const [isWalletShowing, setIsWalletShowing] = useState(false);
@@ -46,11 +46,10 @@ const Navbar = () => {
 
   const { config } = useContext(GlobalContext);
 
-  const { data, loading } = useBlockfrostApi(
-    `/assets/${config.cbtcAssetId}`
-  );
+  const { data, loading } = useAssetsApi();
 
   const addressVault = useBitcoinVault();
+
 
 /*   useEffect(() => {
     if(addressVault){
