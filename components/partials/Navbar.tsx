@@ -11,11 +11,11 @@ import useWindowSize from "../../hooks/useResponsive";
 import SelectNetwork from "./navbar/SelectNetwork";
 import Setting from "./navbar/Setting";
 import { AppContext } from "../../pages/_app";
-import { useBlockfrostApi } from "../../hooks/useBlockfrostApi";
 import { GlobalContext } from "../GlobalContext";
 import { BlockfrostAssets } from "../../types/blockfrost";
 import { numberToFixed } from "../../utils/fortmat";
 import useBitcoinVault from "../../hooks/useBitcoinVault";
+import useBlockfrostApi from "../../hooks/useBlockfrostApi";
 
 const Navbar = () => {
   const [isWalletShowing, setIsWalletShowing] = useState(false);
@@ -47,7 +47,7 @@ const Navbar = () => {
 
   const { config } = useContext(GlobalContext);
 
-  const { data, loading } = useBlockfrostApi<BlockfrostAssets>(
+  const { data, loading } = useBlockfrostApi(
     `/assets/${config.cbtcAssetId}`
   );
 
