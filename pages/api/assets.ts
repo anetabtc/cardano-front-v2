@@ -8,8 +8,7 @@ const ASSET_ID = process.env.CBTC_ASSET_ID;
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
-) {
-  const { headers } = req.body;
+){
 
   if (!CARDANO_NETWORK || !BLOCKFROST_PROJECT_ID || !ASSET_ID) {
     return res
@@ -19,15 +18,16 @@ export default async function handler(
 
   const blockfrostUrl = BLOCKFROST_URL[CARDANO_NETWORK as CardanoNetwork];
   const assetId = ASSET_ID;
+  const url = `${blockfrostUrl}/assets/${assetId}`
+  const headers = {
+    project_id: BLOCKFROST_PROJECT_ID
+  }
 
-  const fetchResponse = await (
-    await fetch(`${blockfrostUrl}/assets/${assetId}`, {
-      headers: {
-        ...headers,
-        project_id: BLOCKFROST_PROJECT_ID,
-      },
-    })
-  ).json();
-
-  res.status(200).send(fetchResponse);
+  try {
+    const response = await fetch(url, { headers });
+    const data = await response.json();
+    res.status(200).json(data);
+  } catch (error) {
+    res.status(500).json({ error: 'An error occurred' });
+  }
 }
